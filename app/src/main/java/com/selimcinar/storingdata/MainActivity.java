@@ -8,20 +8,28 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.selimcinar.storingdata.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     //Global tanımlar
+   private ActivityMainBinding binding;
     EditText editText;
     TextView textView;
     SharedPreferences sharedPreferences;
+
+    //İnflate xml ile kodları bağlar bu aşağıdaki kodları her aktivitede ekle
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         //id bağlantıları değişkenlere eşitlendi
-        editText = findViewById(R.id.editText);
-        textView = findViewById(R.id.textView);
+        editText = binding.editText.findViewById (R.id.editText);
+        textView = binding.textView.findViewById (R.id.textView);
 
         //SharedPreferences küçük boyutta verileri tutar ve MODE_PRIVATE SADECE BENIM UYGULAMAMDA GÖZÜKSÜN DEMEK.
         sharedPreferences = this.getSharedPreferences("com.selimcinar.storingdata",MODE_PRIVATE);
