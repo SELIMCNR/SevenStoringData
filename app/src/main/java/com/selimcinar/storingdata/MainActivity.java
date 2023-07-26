@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         //Kaydedilen verileri silme
         int storedAge= sharedPreferences.getInt("storedAge",0);
         if(storedAge !=0){
-            //Kaydedilen veriyi silen kod
+            //Kaydedilen veriyi silen kodtur
             sharedPreferences.edit().remove("storedAge").apply();
             textView.setText("Your age: ");
 
