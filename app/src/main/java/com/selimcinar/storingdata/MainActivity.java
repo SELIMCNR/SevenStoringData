@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.selimcinar.storingdata.databinding.ActivityMainBinding;
-
+  
 public class MainActivity extends AppCompatActivity {
 
     //Global tanımlar
